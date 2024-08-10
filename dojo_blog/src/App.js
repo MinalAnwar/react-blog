@@ -1,7 +1,7 @@
 
 import Navbar from './components/navbar';
 import Home from './components/home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CreateBlog from './components/createBlog';
 import BlogDetails from './components/BlogDetails';
 //this wraping with router is bcz it known that all things inside app will have access to the browser router
