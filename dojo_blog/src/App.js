@@ -4,7 +4,6 @@ import Home from './components/home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import CreateBlog from './components/createBlog';
 import BlogDetails from './components/BlogDetails';
-import NotFound from './components/404notFound';
 //this wraping with router is bcz it known that all things inside app will have access to the browser router
 // npx json-server --watch data/db.json --port 8000 use this to use json server
 function App() {
