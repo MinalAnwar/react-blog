@@ -1,6 +1,6 @@
 import BlogList from "./bloglist";
 import useFetch from "../useFetch";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from 'react-router-dom';
 const Home = () => {
     // const handleClick = ()=>{
     //     console.log("Hello ninjas")
