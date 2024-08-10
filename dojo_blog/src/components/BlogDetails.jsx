@@ -1,10 +1,10 @@
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import useFetch from "../useFetch";
 
 const BlogDetails = () => {
     //to get parameters from route path url
     const {id} = useParams()
-    const history = useHistory();
+    const history = useNavigate();
     console.log(id)
     const {data:blog, isPending, error, changeData} = useFetch('http://localhost:8000/blog/'+id);
     const handleDelete = ()=>{
