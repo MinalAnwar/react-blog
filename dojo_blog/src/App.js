@@ -1,9 +1,8 @@
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Navbar from './components/navbar';
+import Home from './components/home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CreateBlog from './components/CreateBlog';
+import CreateBlog from './components/createBlog';
 import BlogDetails from './components/BlogDetails';
-import NotFound from './components/NotFound';
 
 // this wrapping with Router is because it ensures that all components inside App will have access to the BrowserRouter
 // npx json-server --watch data/db.json --port 8000 use this to use json server
@@ -22,7 +21,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/createblog" element={<CreateBlog />} />
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
