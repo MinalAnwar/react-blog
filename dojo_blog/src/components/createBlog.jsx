@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { usenavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const CreateBlog = () => {
     const [title, setTitle] = useState();
@@ -7,7 +7,7 @@ const CreateBlog = () => {
     const [author, setAuthor] = useState('Mario');
     const [Pending, setPending] = useState(false);
     //use to redirect to history from where we came -1 means go 1 place back
-    const history = usenavigate();
+    const history = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, body, author };
