@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dojo_blog/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dojo_blog/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dojo_blog/$1"
+    }
+  ]
+}
