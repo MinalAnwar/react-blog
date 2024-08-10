@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from 'react-router-dom';
 
 const CreateBlog = () => {
     const [title, setTitle] = useState();
