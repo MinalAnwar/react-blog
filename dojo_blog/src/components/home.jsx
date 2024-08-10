@@ -1,6 +1,6 @@
 import BlogList from "./bloglist";
 import useFetch from "../useFetch";
-import { usenavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
     // const handleClick = ()=>{
     //     console.log("Hello ninjas")
@@ -63,7 +63,7 @@ const Home = () => {
     // },[]) copy this to useFetch.js for custom hook
     //key must have a unique value react keep track if any change it will change frontend
     //blog && we need to check wether blog have data or not id blog empty false and never go ahead
-    const history = usenavigate();
+    const history = useNavigate();
     const {data:blog ,isPending,error,changeData} = useFetch("http://localhost:8000/blog")
     const handleDelete = (id)=>{
         const BlogAfterDelete = blog.filter((blog)=>blog.id != id);
