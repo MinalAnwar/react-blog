@@ -1,37 +1,29 @@
-
-import Navbar from './components/navbar';
-import Home from './components/home';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CreateBlog from './components/createBlog';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CreateBlog from './components/CreateBlog';
 import BlogDetails from './components/BlogDetails';
-//this wraping with router is bcz it known that all things inside app will have access to the browser router
+import NotFound from './components/NotFound';
+
+// this wrapping with Router is because it ensures that all components inside App will have access to the BrowserRouter
 // npx json-server --watch data/db.json --port 8000 use this to use json server
 function App() {
-  //var heading = "Welcome Minal"
-  //check  usestate cleanup function to remove the error of not fetching when we switch in other component immediatly before fetch
-  //route parameter  /blog/1 show blog of id 1 only where 1 is parameter
+  // var heading = "Welcome Minal"
+  // check useState cleanup function to remove the error of not fetching when we switch to another component immediately before fetch
+  // route parameter /blog/1 shows blog with id 1 where 1 is the parameter
   return (
     <Router>
       <div className="App">
-        <Navbar></Navbar>
+        <Navbar />
         <div className="content">
-          {/* where page content will go when go on other page  this  need switch*/}
-          <Switch>
-            {/* this is for that user will see this compnent when go to this type of path exact for complete matching if completly same then go to that component inside it */}
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route exact path="/blog/:id">
-              <BlogDetails></BlogDetails>
-            </Route>
-
-            <Route exact path="/createblog">
-              <CreateBlog></CreateBlog>
-            </Route>
-            <Route exact path="*">
-              <NotFound></NotFound>
-            </Route>
-          </Switch>
+          {/* where page content will go when navigating to other pages, this needs Routes */}
+          <Routes>
+            {/* this ensures that the user will see this component when navigating to this path. "exact" is used for complete matching; if it matches exactly, then the corresponding component will render */}
+            <Route path="/" element={<Home />} />
+            <Route path="/blog/:id" element={<BlogDetails />} />
+            <Route path="/createblog" element={<CreateBlog />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </Router>
